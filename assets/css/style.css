@@ -4,3 +4,13 @@ body{
     background-color: #FAFAFA;
     margin: 0 auto;
 }
+.scrolling-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin: 2% 5%;
+}
+    .card {
+      display: inline-block;
+      margin: 10%;
+    }
