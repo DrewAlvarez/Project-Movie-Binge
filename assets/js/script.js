@@ -1,7 +1,12 @@
 var movieList = ["Back to the Future", "Jumanji", "Jurassic Park", "Underworld", "The Princess Bride", "City Slickers", "Smokey and the Bandit", "Tropic Thunder", "Dumb and Dumber", "Excalibur"]
 var movieDiv = $("<div>")
 
+for(var i = 0; i < movieList.length; i++){
+  var moviePoster = movieList[i]
+  posterFunc(moviePoster)
+}
 
+<<<<<<< HEAD
 for (var i = 0; i < 10; i++) {
   var randomId = Math.floor(Math.random() * 6534893)
   var moviePoster = "0000000" + randomId;
@@ -11,6 +16,17 @@ for (var i = 0; i < 10; i++) {
 
 function posterFunc(moviePoster) {
   var omdbUrl = "https://www.omdbapi.com/?i=tt" + moviePoster + "&apikey=f52998b5";
+=======
+// for(var i=0; i < 10; i++){
+//   var randomId = Math.floor(Math.random()*6534893)
+//   var moviePoster = "0000000" + randomId;
+  
+//   posterFunc(moviePoster.substr(moviePoster.length-7))
+// }
+
+function posterFunc(moviePoster){
+  var omdbUrl = "https://www.omdbapi.com/?t=" + moviePoster + "&apikey=c2cf349a";
+>>>>>>> master
 
   $.ajax({
     url: omdbUrl,
