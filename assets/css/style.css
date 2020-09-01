@@ -14,3 +14,10 @@ body{
       display: inline-block;
       margin: 10%;
     }
+.modal{
+    z-index: 100;
+}
+.modal-content{
+    background-color: white;
+    height: 250px;
+}
