@@ -1,6 +1,7 @@
 var movieList = ["Back to the Future", "Jumanji", "Jurassic Park", "Underworld", "The Princess Bride", "City Slickers", "Smokey and the Bandit", "Tropic Thunder", "Dumb and Dumber", "Excalibur"]
 var movieDiv = $("<div>")
 
+
 for(var i = 0; i < movieList.length; i++){
   var moviePoster = movieList[i]
   posterFunc(moviePoster)
@@ -30,4 +31,5 @@ function posterFunc(moviePoster){
         $("#movie-scroll").append(randomMovies)
       }
   });
+ 
 }
