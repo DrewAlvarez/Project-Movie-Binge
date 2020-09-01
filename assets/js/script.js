@@ -13,38 +13,46 @@ for(var i = 0; i < 10; i++){
       console.log(randomNum)
     }
   }while(!added)
-
 }
 
 for(var i=0; i < 10; i++){
   var moviePoster = movieList[randomArr[i]]
   console.log(moviePoster)  
   
-  posterFunc(moviePoster)
+  posterFunc(moviePoster, i)
 }
 
-function posterFunc(moviePoster){
+function posterFunc(moviePoster, index){
   var omdbUrl = "https://www.omdbapi.com/?i=tt" + moviePoster + "&apikey=c2cf349a";
 
   $.ajax({
-      url: omdbUrl,
-      method: "GET",
+    url: omdbUrl,
+    method: "GET",
 
   }).then(function(response) {
     console.log(response)
-    
-    
+
     imgSrc = response.Poster
-    var randomMovies = $("<img>").attr("src", imgSrc);
-    $("#movie-scroll").append(randomMovies)
+    var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
+    //$("#movie-scroll").append(randomMovies)
+    $($(".gallery-cell").get(index)).append(randomMovies);
 
     randomMovies.on("click", function(){
-      $(".modal-content").text("Plot: " + response.Plot);
+      $(".modal-card-title").text(response.Title);
+      $(".plot").text(response.Plot);
+      $(".actors").text(response.Actors)
+      $(".rated").text(response.Rated)
       $(".modal").addClass("is-active");
     })
-    $(".modal-close").click(function(){
+    
+    $(".delete").click(function(){
       $(".modal").removeClass("is-active");
     })
-            
+    $(".cancelBtn").click(function(){
+      $(".modal").removeClass("is-active");
+    })
+          
   });
-}
+
+};
+
