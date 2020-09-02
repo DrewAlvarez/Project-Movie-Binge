@@ -52,6 +52,19 @@ main{
 @media (min-width: 992px) and (max-width: 1199.98px) { 
 
 }
+    .card {
+      display: inline-block;
+      margin: 10%;
+    }
+.modal{
+    z-index: 100;
+}
+.modal-content{
+    background-color: white;
+    padding: 20px;
+    border-radius: 0px 20px 0px 20px;
+    height: 250px;
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
