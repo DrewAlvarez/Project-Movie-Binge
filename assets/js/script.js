@@ -33,7 +33,7 @@ function posterFunc(moviePoster, index){
         // movieBox.append(randomMovies);
         // $("#movie-scroll").append(movieBox);
         // $(".gallery").prepend(movieBox);
-        $($(".gallery-cell").get(index)).append(randomMovies);
+        $($(".carousel-cell").get(index)).append(randomMovies);
     }
     
     });
