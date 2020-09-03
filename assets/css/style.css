@@ -2,10 +2,16 @@ body{
     width: 100%;
     background-color: #FAFAFA;
     margin: 0 auto;
+    padding-bottom: 6em;
 }
 
 main{
     width: 100%;
+}
+
+section{
+    width: 90%;
+    margin: 0 auto;
 }
 
 h1{
@@ -15,20 +21,52 @@ h1{
 
 nav{
     margin-bottom: 2em;
+    padding: .5em 2.5% .5em;
     box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
 }
 
+.navbar-item{
+    color:#390268;
+    font-weight: 700;
+}
+
+.inviteBtn{
+    background-color:#b216bf;
+    color: #fff;
+}
+
+.inviteBtn:hover{
+    background-color:#b216bf;
+    color: #fff;
+}
+
+.inviteBtn:focus{
+    background-color:#b216bf;
+    border:none;
+    color: #fff;
+}
+
+.inviteBtn:active{
+    background-color:#b216bf;
+    color: #fff;
+}
 
 #movie-scroll{
     width: 100%;
-    margin-top: 2em;
-    height: 500px;
+    margin: 2em 0;
+    height: 400px;
 }
 
 .gallery-cell {
-    width: 400px;
-    height: 500px;
-    padding: 0 2%;
+    width: 250px;
+    height: 350px;
+    padding: 0 1%;
+}
+
+.tv-cell {
+    width: 250px;
+    height: 350px;
+    padding: 0 1%;
 }
 
 .posterSize{
@@ -42,12 +80,14 @@ nav{
 
 .card {
     display: inline-block;
-    margin: 10%;
+    margin: 1em 2%;
+    border-radius: 5px;
     }
 
 .modal{
     z-index: 10;
 }
+
 .modal-card{
     background-color: white;
     border-radius: 5px;
@@ -68,8 +108,9 @@ nav{
     background-color:#fff;
 }
 
-.card{
-    margin: 1em 2%;
+.saved-movies{
+    width: 95%;
+    margin: 0 auto;
 }
 
 footer{
@@ -78,7 +119,7 @@ footer{
     bottom: 0;
     width: 100%;
     padding: 1em 0;
-    background: #232529;
+    background: #0f011b;
     color: #fff;
     text-align: center;
 }
@@ -107,8 +148,17 @@ footer{
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    #movie-scroll{
+        margin: 1em 0;
+    }
+
     .gallery-cell {
-        width: 30%;
-        height: 500px;
+        width: 300px;
+        height: 400px;
+    }
+
+    .tv-cell {
+        width: 300px;
+        height: 400px;
     }
 } 
