@@ -3,100 +3,118 @@ var showList = ["5491994", "0795176", "0185906", "0903747", "7366338", "0306414"
 var movieDiv = $("<div>")
 var randomArr = []
 
-// Generates a random number
-for (var i = 0; i < 10; i++) {
-    var added = false;
-    do {
-        added = false;
-        var randomNum = Math.floor(Math.random() * 50);
-        if (randomArr.indexOf(randomNum) === -1) {
-            randomArr.push(randomNum);
-            added = true;
-            console.log(randomNum)
-        }
-    } while (!added)
-}
+$(document).ready(function(){
+  // Generates a random number
+  for (var i = 0; i < 10; i++) {
+      var added = false;
+      do {
+          added = false;
+          var randomNum = Math.floor(Math.random() * 50);
+          if (randomArr.indexOf(randomNum) === -1) {
+              randomArr.push(randomNum);
+              added = true;
+              console.log(randomNum)
+          }
+      } while (!added)
+  }
 
-// Grabs Random Movie Posters
-for (var i = 0; i < 10; i++) {
-    var moviePoster = movieList[randomArr[i]]
-    console.log(moviePoster)
-    posterFunc(moviePoster, i)
-}
+  // Grabs Random Movie Posters
+  for (var i = 0; i < 10; i++) {
+      var moviePoster = movieList[randomArr[i]]
+      console.log(moviePoster)
+      posterFunc(moviePoster, i)
 
 
-for (var i = 0; i < 10; i++) {
-    var showPoster = showList[randomArr[i]]
-    posterFuncTwo(showPoster, i)
-}
+  }
 
-//Random movie API
-function posterFunc(moviePoster, index) {
-    var omdbUrl = "https://www.omdbapi.com/?i=tt" + moviePoster + "&apikey=c2cf349a";
+
+  for (var i = 0; i < 10; i++) {
+      var showPoster = showList[randomArr[i]]
+      posterFuncTwo(showPoster, i)
+  }
+
+  //Random movie API
+  function posterFunc(moviePoster, index) {
+      var omdbUrl = "https://www.omdbapi.com/?i=tt" + moviePoster + "&apikey=c2cf349a";
+
+      $.ajax({
+          url: omdbUrl,
+          method: "GET",
+
+      }).then(function (response) {
+          console.log(response)
+
+          imgSrc = response.Poster
+          var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
+          $($(".gallery-cell").get(index)).append(randomMovies);
+
+          //Function to activate Modal
+          randomMovies.on("click", function () {
+              $(".modal-card-title").text(response.Title);
+              $(".plot").text(response.Plot);
+              $(".actors").text(response.Actors)
+              $(".rated").text(response.Rated)
+              $(".hiddenId").text(response.imdbID)
+              $(".modal").addClass("is-active");
+          })
+
+          //Modal Button functions        
+          $(".delete").click(function () {
+              $(".modal").removeClass("is-active");
+          })
+          $(".delete").click(function () {
+              $(".modal").removeClass("is-active");
+          })
+          
+
+      });
+
+
+  };
+
+  function posterFuncTwo(showPoster, index){
+    var omdbUrl = "https://www.omdbapi.com/?i=tt" + showPoster + "&apikey=c2cf349a";
 
     $.ajax({
-        url: omdbUrl,
-        method: "GET",
+      url: omdbUrl,
+      method: "GET",
 
-    }).then(function (response) {
-        console.log(response)
+    }).then(function(response) {
+      console.log(response)
 
-        imgSrc = response.Poster
-        var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
-        $($(".gallery-cell").get(index)).append(randomMovies);
+      imgSrc = response.Poster
+      var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
+      //$("#movie-scroll").append(randomMovies)
+      $($(".tv-cell").get(index)).append(randomMovies);
 
-        //Function to activate Modal
-        randomMovies.on("click", function () {
-            $(".modal-card-title").text(response.Title);
-            $(".plot").text(response.Plot);
-            $(".actors").text(response.Actors)
-            $(".rated").text(response.Rated)
-            $(".modal").addClass("is-active");
-        })
-
-        //Modal Button functions        
-        $(".delete").click(function () {
-            $(".modal").removeClass("is-active");
-        })
-        $(".delete").click(function () {
-            $(".modal").removeClass("is-active");
-        })
-
+      randomMovies.on("click", function(){
+        $(".modal-card-title").text(response.Title);
+        $(".plot").text(response.Plot);
+        $(".actors").text(response.Actors)
+        $(".rated").text(response.Rated)
+        $(".hiddenId").text(response.imdbID)
+        $(".modal").addClass("is-active");
+      })
+      
+      $(".delete").click(function(){
+        $(".modal").removeClass("is-active");
+      })
+      $(".cancelBtn").click(function(){
+        $(".modal").removeClass("is-active");
+      })
+            
     });
 
+  }
 
-};
-
-function posterFuncTwo(showPoster, index){
-  var omdbUrl = "https://www.omdbapi.com/?i=tt" + showPoster + "&apikey=c2cf349a";
-
-  $.ajax({
-    url: omdbUrl,
-    method: "GET",
-
-  }).then(function(response) {
-    console.log(response)
-
-    imgSrc = response.Poster
-    var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
-    //$("#movie-scroll").append(randomMovies)
-    $($(".tv-cell").get(index)).append(randomMovies);
-
-    randomMovies.on("click", function(){
-      $(".modal-card-title").text(response.Title);
-      $(".plot").text(response.Plot);
-      $(".actors").text(response.Actors)
-      $(".rated").text(response.Rated)
-      $(".modal").addClass("is-active");
-    })
+  $(".is-success").click(function(){
+    var saved = $(this)[0].nextElementSibling.innerText
+    var saveId = "ID"
+    var prevId = JSON.parse(localStorage.getItem(saveId))
+    if(prevId === null){prevId = prevId ? prevId.split(",") : [];}
     
-    $(".delete").click(function(){
-      $(".modal").removeClass("is-active");
-    })
-    $(".cancelBtn").click(function(){
-      $(".modal").removeClass("is-active");
-    })
-          
-  });
+    prevId.push(saved)
 
-}
+    localStorage.setItem("ID", JSON.stringify(prevId))
+  })
+})
