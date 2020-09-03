@@ -21,11 +21,16 @@ nav{
 
 #movie-scroll{
     width: 100%;
-    margin-top: 2em;
+    margin: 2em 0 2em;
     height: 500px;
 }
 
 .gallery-cell {
+    width: 400px;
+    height: 500px;
+    padding: 0 2%;
+}
+.tv-cell {
     width: 400px;
     height: 500px;
     padding: 0 2%;
@@ -104,6 +109,10 @@ footer{
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .gallery-cell {
+        width: 30%;
+        height: 500px;
+    }
+    .tv-cell {
         width: 30%;
         height: 500px;
     }
