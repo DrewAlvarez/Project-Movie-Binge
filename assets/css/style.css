@@ -68,6 +68,10 @@ nav{
     background-color:#fff;
 }
 
+.card{
+    margin: 1em 2%;
+}
+
 footer{
     position: fixed;
     left: 0;
