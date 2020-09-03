@@ -8,29 +8,81 @@ main{
     width: 100%;
 }
 
-.gallery {
-    background: red;
-    margin-top: 3em;
-    height: 400px;
+h1{
+    font-weight:900;
+    font-size: 3.5em;
+}
+
+nav{
+    margin-bottom: 2em;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
+}
+
+
+#movie-scroll{
+    width: 100%;
+    margin: 2em 0 2em;
+    height: 500px;
 }
 
 .gallery-cell {
-    width: 20%;
-    height:400px;
-    margin: 0 1%;
+    width: 400px;
+    height: 500px;
+    padding: 0 2%;
+}
+.tv-cell {
+    width: 400px;
+    height: 500px;
+    padding: 0 2%;
 }
 
 .posterSize{
-    height: 400px;
+    height: 100%;
 }
 
 /* view/hide dots */
 .flickity-page-dots {
     display: none;
 }
-/* 
 
+.card {
+    display: inline-block;
+    margin: 10%;
+    }
 
+.modal{
+    z-index: 10;
+}
+.modal-card{
+    background-color: white;
+    border-radius: 5px;
+}
+
+.modal-card-head{
+    background-color:#fff;
+    margin-bottom: 0;
+}
+
+.data-header{
+    font-weight: 700;
+    padding-top: 0em;
+}
+
+.modal-card-foot{
+    border:none;
+    background-color:#fff;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1em 0;
+    background: #232529;
+    color: #fff;
+    text-align: center;
+}
 
     /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -52,21 +104,16 @@ main{
 @media (min-width: 992px) and (max-width: 1199.98px) { 
 
 }
-    .card {
-      display: inline-block;
-      margin: 10%;
-    }
-.modal{
-    z-index: 100;
-}
-.modal-content{
-    background-color: white;
-    padding: 20px;
-    border-radius: 0px 20px 0px 20px;
-    height: 250px;
-}
+
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+    .gallery-cell {
+        width: 30%;
+        height: 500px;
+    }
+    .tv-cell {
+        width: 30%;
+        height: 500px;
+    }
 } 
