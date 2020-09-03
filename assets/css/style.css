@@ -55,6 +55,7 @@ nav{
     width: 100%;
     margin: 2em 0;
     height: 400px;
+
 }
 
 .gallery-cell {
@@ -67,6 +68,11 @@ nav{
     width: 250px;
     height: 350px;
     padding: 0 1%;
+}
+.tv-cell {
+    width: 400px;
+    height: 500px;
+    padding: 0 2%;
 }
 
 .posterSize{
@@ -160,5 +166,9 @@ footer{
     .tv-cell {
         width: 300px;
         height: 400px;
+    }
+    .tv-cell {
+        width: 30%;
+        height: 500px;
     }
 } 
