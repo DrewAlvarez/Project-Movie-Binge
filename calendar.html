@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Movie Binge Calendar </title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <title>Movie Binge | Fine and Share New Media</title>
+
     <!-- CSS Sheets -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
-
-
     <!-- Javasctipt -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="assets/js/watchList.js"></script>
+    <script src="assets/js/script.js"></script>
 
+    <!-- FONT OPTIONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 
 
 </head>
@@ -42,7 +44,7 @@
                 <a class="navbar-item" href="index.html">
                     Home
                 </a>
-                <a class="navbar-item" href="calendar.html">
+                <a class="navbar-item" href="watchlist.html">
                     View Watch List
                 </a>
             </div>
@@ -51,7 +53,7 @@
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a class="button is-primary" href="#">
+                            <a class="button is-primary" href="calendar.html">
                                 <span class="icon">
                                     <i class="fa fa-download"></i>
                                 </span>
@@ -88,17 +90,12 @@
         var authorizeButton = document.getElementById('authorize_button');
         var signoutButton = document.getElementById('signout_button');
 
-        /**
-         *  On load, called to load the auth2 library and API client library.
-         */
+        // On load, called to load the auth2 library and API client library
         function handleClientLoad() {
             gapi.load('client:auth2', initClient);
         }
 
-        /**
-         *  Initializes the API client library and sets up sign-in state
-         *  listeners.
-         */
+        // Initializes the API client library and sets up sign-in state listeners.
         function initClient() {
             gapi.client.init({
                 apiKey: API_KEY,
@@ -118,10 +115,7 @@
             });
         }
 
-        /**
-         *  Called when the signed in status changes, to update the UI
-         *  appropriately. After a sign-in, the API is called.
-         */
+        // Called when the signed in status changes, to update the UI appropriately. After a sign-in, the API is called.
         function updateSigninStatus(isSignedIn) {
             if (isSignedIn) {
                 authorizeButton.style.display = 'none';
@@ -133,37 +127,24 @@
             }
         }
 
-        /**
-         *  Sign in the user upon button click.
-         */
+        //Sign in the user upon button click.
         function handleAuthClick(event) {
             gapi.auth2.getAuthInstance().signIn();
         }
 
-        /**
-         *  Sign out the user upon button click.
-         */
+        //Sign out the user upon button click.
         function handleSignoutClick(event) {
             gapi.auth2.getAuthInstance().signOut();
         }
 
-        /**
-         * Append a pre element to the body containing the given message
-         * as its text node. Used to display the results of the API call.
-         *
-         * @param {string} message Text to be placed in pre element.
-         */
+        //Append a pre element to the body containing the given message as its text node. Used to display the results of the API call. @param {string} message Text to be placed in pre element.
         function appendPre(message) {
             var pre = document.getElementById('content');
             var textContent = document.createTextNode(message + '\n');
             pre.appendChild(textContent);
         }
 
-        /**
-         * Print the summary and start datetime/date of the next ten events in
-         * the authorized user's calendar. If no events are found an
-         * appropriate message is printed.
-         */
+        // Print the summary and start datetime/date of the next ten events in the authorized user's calendar. If no events are found anappropriate message is printed.
         function listUpcomingEvents() {
             gapi.client.calendar.events.list({
                 'calendarId': 'primary',
@@ -196,6 +177,7 @@
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
         </script>
+    
     <!-- Web Footer -->
     <footer>
         <h6> Find new movies and shows to love!</h6>
