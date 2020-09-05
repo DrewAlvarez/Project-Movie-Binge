@@ -30,24 +30,32 @@ nav{
     font-weight: 700;
 }
 
+.logo{
+    font-family: 'Righteous', cursive;
+    font-size: 3em;
+}
+
 .inviteBtn{
     background-color:#b216bf;
     color: #fff;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2)
 }
 
 .inviteBtn:hover{
-    background-color:#b216bf;
-    color: #fff;
+    background-color:#16e3dd;
+    color:#fff ;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2)
 }
 
 .inviteBtn:focus{
-    background-color:#b216bf;
+    background-color:#16e3dd;
     border:none;
     color: #fff;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2)
 }
 
 .inviteBtn:active{
-    background-color:#b216bf;
+    background-color:#16e3dd;
     color: #fff;
 }
 
@@ -84,12 +92,7 @@ nav{
     display: none;
 }
 
-.card {
-    display: inline-block;
-    margin: 1em 2%;
-    border-radius: 5px;
-    }
-
+/* Popup Modal with Movie Info */
 .modal{
     z-index: 10;
 }
@@ -104,6 +107,7 @@ nav{
     margin-bottom: 0;
 }
 
+
 .data-header{
     font-weight: 700;
     padding-top: 0em;
@@ -114,6 +118,13 @@ nav{
     background-color:#fff;
 }
 
+/* Watch List Movies */
+.card {
+    display: inline-block;
+    margin: 1em 1%;
+    border-radius: 5px;
+    }
+    
 .saved-movies{
     width: 95%;
     margin: 0 auto;

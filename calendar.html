@@ -16,16 +16,15 @@
     <!-- Javasctipt -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="assets/js/watchList.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- FONT OPTIONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 
 
 </head>
 
-<!-- Start of Body -->
-
 <body>
-
-
     <!-- Site Main Navigation -->
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
@@ -45,7 +44,7 @@
                 <a class="navbar-item" href="index.html">
                     Home
                 </a>
-                <a class="navbar-item" href="calendar.html">
+                <a class="navbar-item" href="watchlist.html">
                     View Watch List
                 </a>
             </div>
@@ -54,7 +53,7 @@
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a class="button is-primary" href="#">
+                            <a class="button is-primary" href="calendar.html">
                                 <span class="icon">
                                     <i class="fa fa-download"></i>
                                 </span>
@@ -68,122 +67,121 @@
     </nav>
 
 
-    <!-- Main Content -->
-    <section>
+    <p>Movie Binge Calendar</p>
 
-        <div class="saved-movies is-desktop">
-                <!-- <div class="card is-full-mobile is-half-tablet is-one-third-widescreen is-one-third-widescreen is-one-quarter-fullhd">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-4">Movie Name</p>
-                            </div>
-                        </div>
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
 
-                        <div class="content">
-                            <p>Find all the ways to watch this movie!</p>
-                            <ul>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card is-full-mobile is-half-tablet is-one-third-widescreen is-one-third-widescreen is-one-quarter-fullhd">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-4">Movie Name</p>
-                            </div>
-                        </div>
+    <pre id="content" style="white-space: pre-wrap;"></pre>
 
-                        <div class="content">
-                            <p>Find all the ways to watch this movie!</p>
-                            <ul>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card is-full-mobile is-half-tablet is-one-third-widescreen is-one-third-widescreen is-one-quarter-fullhd">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-4">Movie Name</p>
-                            </div>
-                        </div>
+    <script type="text/javascript">
+        // Client ID and API key from the Developer Console
+        var CLIENT_ID = '1005610712119-d83c3lr7avasq0d00e2ktk90afog5uc1.apps.googleusercontent.com';
+        var API_KEY = ' AIzaSyCspVHsVh7Wmx8MEloi9nhstPvzFqLbw0A';
 
-                        <div class="content">
-                            <p>Find all the ways to watch this movie!</p>
-                            <ul>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card is-full-mobile is-half-tablet is-one-third-widescreen is-one-third-widescreen is-one-quarter-fullhd">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-4">Movie Name</p>
-                            </div>
-                        </div>
+        // Array of API discovery doc URLs for APIs used by the quickstart
+        var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
-                        <div class="content">
-                            <p>Find all the ways to watch this movie!</p>
-                            <ul>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                                <li>Ways to stream</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
+        // Authorization scopes required by the API; multiple scopes can be
+        // included, separated by spaces.
+        var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
-        </section>
+        var authorizeButton = document.getElementById('authorize_button');
+        var signoutButton = document.getElementById('signout_button');
 
-        <!-- Web Footer -->
-        <footer>
-            <h6> Find new movies and shows to love!</h6>
-        </footer>
+        // On load, called to load the auth2 library and API client library
+        function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
+        }
 
+        // Initializes the API client library and sets up sign-in state listeners.
+        function initClient() {
+            gapi.client.init({
+                apiKey: API_KEY,
+                clientId: CLIENT_ID,
+                discoveryDocs: DISCOVERY_DOCS,
+                scope: SCOPES
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                authorizeButton.onclick = handleAuthClick;
+                signoutButton.onclick = handleSignoutClick;
+            }, function (error) {
+                appendPre(JSON.stringify(error, null, 2));
+            });
+        }
 
+        // Called when the signed in status changes, to update the UI appropriately. After a sign-in, the API is called.
+        function updateSigninStatus(isSignedIn) {
+            if (isSignedIn) {
+                authorizeButton.style.display = 'none';
+                signoutButton.style.display = 'block';
+                listUpcomingEvents();
+            } else {
+                authorizeButton.style.display = 'block';
+                signoutButton.style.display = 'none';
+            }
+        }
 
+        //Sign in the user upon button click.
+        function handleAuthClick(event) {
+            gapi.auth2.getAuthInstance().signIn();
+        }
+
+        //Sign out the user upon button click.
+        function handleSignoutClick(event) {
+            gapi.auth2.getAuthInstance().signOut();
+        }
+
+        //Append a pre element to the body containing the given message as its text node. Used to display the results of the API call. @param {string} message Text to be placed in pre element.
+        function appendPre(message) {
+            var pre = document.getElementById('content');
+            var textContent = document.createTextNode(message + '\n');
+            pre.appendChild(textContent);
+        }
+
+        // Print the summary and start datetime/date of the next ten events in the authorized user's calendar. If no events are found anappropriate message is printed.
+        function listUpcomingEvents() {
+            gapi.client.calendar.events.list({
+                'calendarId': 'primary',
+                'timeMin': (new Date()).toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'maxResults': 10,
+                'orderBy': 'startTime'
+            }).then(function (response) {
+                var events = response.result.items;
+                appendPre('Upcoming events:');
+
+                if (events.length > 0) {
+                    for (i = 0; i < events.length; i++) {
+                        var event = events[i];
+                        var when = event.start.dateTime;
+                        if (!when) {
+                            when = event.start.date;
+                        }
+                        appendPre(event.summary + ' (' + when + ')')
+                    }
+                } else {
+                    appendPre('No upcoming events found.');
+                }
+            });
+        }
+
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
+    
+    <!-- Web Footer -->
+    <footer>
+        <h6> Find new movies and shows to love!</h6>
+    </footer>
 
 </body>
 
