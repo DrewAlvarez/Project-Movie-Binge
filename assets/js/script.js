@@ -26,16 +26,10 @@ for (var i = 0; i < 10; i++) {
   posterFunc(moviePoster, i)
 }
 
-<<<<<<< HEAD
+
 for (var i = 0; i < 10; i++) {
   var showPoster = showList[randomArr[i]]
   posterFuncTwo(showPoster, i)
-=======
-
-for (var i = 0; i < 10; i++) {
-    var showPoster = showList[randomArr[i]]
-    posterFuncTwo(showPoster, i)
->>>>>>> master
 }
 
 //Random movie API
@@ -53,7 +47,6 @@ function posterFunc(moviePoster, index) {
     var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
     $($(".gallery-cell").get(index)).append(randomMovies);
 
-<<<<<<< HEAD
     //Function to activate Modal
     randomMovies.on("click", function () {
       $(".modal-card-title").text(response.Title);
@@ -70,24 +63,6 @@ function posterFunc(moviePoster, index) {
     $(".delete").click(function () {
       $(".modal").removeClass("is-active");
     })
-=======
-        //Function to activate Modal
-        randomMovies.on("click", function () {
-            $(".modal-card-title").text(response.Title);
-            $(".plot").text(response.Plot);
-            $(".actors").text(response.Actors)
-            $(".rated").text(response.Rated)
-            $(".modal").addClass("is-active");
-        })
-
-        //Modal Button functions        
-        $(".delete").click(function () {
-            $(".modal").removeClass("is-active");
-        })
-        $(".delete").click(function () {
-            $(".modal").removeClass("is-active");
-        })
->>>>>>> master
 
   });
 

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="ondgi2vtmesnTaZnnu97DvCBpX_T_WQC2fqrTZMhUoI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
     <title>Movie Binge | Fine and Share New Media</title>
@@ -22,10 +23,11 @@
 </head>
 
 <!-- Start of Body -->
+
 <body>
 
 
-<!-- Site Main Navigation -->
+    <!-- Site Main Navigation -->
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <a class="navbar-item" href="index.html">
@@ -45,7 +47,7 @@
                     Home
                 </a>
                 <a class="navbar-item" href="calendar.html">
-                        View Watch List
+                    View Watch List
                 </a>
             </div>
 
@@ -67,80 +69,80 @@
     </nav>
 
 
-<!-- Main Content -->
-<main>
+    <!-- Main Content -->
+    <main>
 
-<!-- Random Movie Scroller -->
-    <div id="movie-scroll" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+        <!-- Random Movie Scroller -->
+        <div id="movie-scroll" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
 
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-    </div>
-
-
-<!-- Random Television Scroller -->
-    <div id="tv-scroll" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
-
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-        <div class="tv-cell"></div>
-    </div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+        </div>
 
 
-<!-- Pop up with Movie/Show Title, Description, Actors and Rating -->
-    <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <div class="modal-card-head">
-                <p class="modal-card-title"></p>
-                <button class="delete" aria-label="close"></button>
-            </div>
-            <section class="modal-card-body">
-                <div>
-                    <p class="data-header">Plot:</p>
-                    <p class="plot"></p>
+        <!-- Random Television Scroller -->
+        <div id="tv-scroll" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+            <div class="tv-cell"></div>
+        </div>
+
+
+        <!-- Pop up with Movie/Show Title, Description, Actors and Rating -->
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <div class="modal-card-head">
+                    <p class="modal-card-title"></p>
+                    <button class="delete" aria-label="close"></button>
                 </div>
-                <div>
-                    <p class="data-header">Actors:</p>
-                    <p class="actors"></p>
+                <section class="modal-card-body">
+                    <div>
+                        <p class="data-header">Plot:</p>
+                        <p class="plot"></p>
+                    </div>
+                    <div>
+                        <p class="data-header">Actors:</p>
+                        <p class="actors"></p>
+                    </div>
+                    <div>
+                        <p class="data-header">Rated:</p>
+                        <p class="rated"></p>
+                    </div>
+                </section>
+                <div class="modal-card-foot">
+                    <button class="button is-success">Add to Watch List</button>
+                    <!-- <button class="button cancelBtn">Cancel</button> -->
                 </div>
-                <div>
-                    <p class="data-header">Rated:</p>
-                    <p class="rated"></p>
-                </div>
-            </section>
-            <div class="modal-card-foot">
-                <button class="button is-success">Add to Watch List</button>
-                <!-- <button class="button cancelBtn">Cancel</button> -->
             </div>
         </div>
-    </div>
 
 
-<!-- Web Footer -->
-    <footer>
-        <h6> Find new movies and shows to love!</h6>
-    </footer>
+        <!-- Web Footer -->
+        <footer>
+            <h6> Find new movies and shows to love!</h6>
+        </footer>
 
-</main>
+    </main>
 
 
-<!-- Script to make Hamburger function -->
+    <!-- Script to make Hamburger function -->
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
