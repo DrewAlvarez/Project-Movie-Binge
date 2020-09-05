@@ -6,11 +6,11 @@ $(document).ready(function(){
 
     function watchListFunc(watchListArr) {
         var omdbUrl = "https://www.omdbapi.com/?i=" + watchListArr + "&apikey=c2cf349a";
-  
+
         $.ajax({
             url: omdbUrl,
             method: "GET",
-  
+
         }).then(function (response) {
             
             var cardEl = $("<div>").addClass("card is-full-mobile is-half-tablet is-one-third-widescreen is-one-third-widescreen is-one-quarter-fullhd");
