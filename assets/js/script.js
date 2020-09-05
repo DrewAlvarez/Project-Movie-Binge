@@ -90,10 +90,9 @@ function posterFuncTwo(showPoster, index) {
       $(".rated").text(response.Rated)
       $(".modal").addClass("is-active");
     })
-    moviebtn.on("click", function () {
-      console.log("movie", JSON.stringify(response));
 
-    })
+
+
     $(".delete").click(function () {
       $(".modal").removeClass("is-active");
     })
@@ -102,4 +101,9 @@ function posterFuncTwo(showPoster, index) {
     })
 
   });
+
 }
+$(moviebtn).click(function () {
+  localStorage.setItem("movie", response.imdbID)
+
+})
