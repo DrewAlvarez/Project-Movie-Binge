@@ -116,5 +116,6 @@ $(document).ready(function(){
     prevId.push(saved)
 
     localStorage.setItem("ID", JSON.stringify(prevId))
+    $(".modal").removeClass("is-active");
   })
 })
