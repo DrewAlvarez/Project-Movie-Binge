@@ -1,5 +1,4 @@
 var watchListArr = JSON.parse(localStorage.getItem("ID"))
-
 $(document).ready(function(){
     for( var i = 0; i < watchListArr.length; i++){
         watchListFunc(watchListArr[i])
@@ -22,6 +21,7 @@ $(document).ready(function(){
             var mediaEl = $("<div>").addClass("media")
             var mediaContentEl = $("<div>").addClass("media-content")
             var titleEl = $("<p>").addClass("title is-4")
+            var buttonEl = $("<button>").addClass("button").text("Remove Movie")
             imgEl.attr("src", response.Poster)
             titleEl.text(response.Title)
             
@@ -34,7 +34,20 @@ $(document).ready(function(){
             cardContentEl.append(mediaEl)
             cardEl.append(cardContentEl)
 
-            $(".is-desktop").append(cardEl)  
+            cardEl.append(buttonEl)
+
+            $(".saved-movies").append(cardEl)
+
+            buttonEl.click(function(){
+                var watchList = JSON.parse(localStorage.getItem("ID"))
+                var movieId = response.imdbID
+                var updatedList = watchList.filter(function(item){
+                    return item !== movieId
+                })
+                localStorage.setItem("ID", JSON.stringify(updatedList))
+                cardEl.empty()
+                
+            })
         });
     };
 })
