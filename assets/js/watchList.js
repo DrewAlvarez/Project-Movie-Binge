@@ -36,7 +36,7 @@ $(document).ready(function(){
 
             cardEl.append(buttonEl)
 
-            $(".is-desktop").append(cardEl)
+            $(".saved-movies").append(cardEl)
 
             buttonEl.click(function(){
                 var watchList = JSON.parse(localStorage.getItem("ID"))
