@@ -22,6 +22,8 @@ $(document).ready(function () {
             var mediaContentEl = $("<div>").addClass("media-content")
             var titleEl = $("<p>").addClass("title is-4")
             var buttonEl = $("<button>").addClass("button").text("Remove Movie")
+            buttonEl.addClass("button-content")
+            imgEl.addClass("image-content")
             imgEl.attr("src", response.Poster)
             titleEl.text(response.Title)
 
