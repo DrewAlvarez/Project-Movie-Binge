@@ -20,53 +20,47 @@
 
     <!-- FONT OPTIONS -->
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
 
 <body>
-    <!-- Site Main Navigation -->
-    <nav class="navbar is-transparent">
-        <div class="navbar-brand">
+
+<!-- Site Main Navigation -->
+<nav class="navbar is-transparent">
+    <div class="navbar-brand">
+        <a class="logo" href="index.html">Movie Binge</a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
             <a class="navbar-item" href="index.html">
-                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"
-                    width="112" height="28">
+                <span class="pageLink">Home</span>
             </a>
-            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a class="navbar-item" href="watchlist.html">
+                <span class ="pageLink">View Watch List</span>
+            </a>
         </div>
 
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
-                    Home
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="button inviteBtn" href="calendar.html">
+                    <!-- Invite to Watch -->
+                    <p><span class="fa fa-calendar"></span>&ensp; Invite to Watch</p>
                 </a>
-                <a class="navbar-item" href="watchlist.html">
-                    View Watch List
-                </a>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="field is-grouped">
-                        <p class="control">
-                            <a class="button is-primary" href="calendar.html">
-                                <span class="icon">
-                                    <i class="fa fa-download"></i>
-                                </span>
-                                <span>Invite to Watch</span>
-                            </a>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-
+<main class="calendar">
     <p>Movie Binge Calendar</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
@@ -177,11 +171,33 @@
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
         </script>
+
+</main>
     
     <!-- Web Footer -->
     <footer>
         <h6> Find new movies and shows to love!</h6>
     </footer>
+
+
+
+    <!-- Script to make Hamburger function -->
+    <script>
+
+        $(document).ready(function() {
+
+        // Check for click events on the navbar burger icon
+        $(".navbar-burger").click(function() {
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+
+        });
+        });
+
+    </script>
+
 
 </body>
 
