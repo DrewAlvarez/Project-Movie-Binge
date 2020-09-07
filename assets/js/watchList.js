@@ -13,30 +13,28 @@ $(document).ready(function () {
 
         }).then(function (response) {
 
-            var cardEl = $("<div>").addClass("card is-full-mobile is-half-tablet is-one-third-widescreen is-one-third-widescreen is-one-quarter-fullhd");
+            var cardEl = $("<div>").addClass("card is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd");
             var cardImgEl = $("<div>").addClass("card-image")
-            var figureEl = $("<div>").addClass("image is-4by3")
+            // var figureEl = $("<div>").addClass("image")
             var imgEl = $("<img>")
             var cardContentEl = $("<div>").addClass("card-content")
-            var mediaEl = $("<div>").addClass("media")
-            var mediaContentEl = $("<div>").addClass("media-content")
-            var titleEl = $("<p>").addClass("title is-4")
-            var buttonEl = $("<button>").addClass("button").text("Remove Movie")
-            buttonEl.addClass("button-content")
-            imgEl.addClass("image-content")
+            // var mediaEl = $("<div>").addClass("media")
+            // var mediaContentEl = $("<div>").addClass("media-content")
+            var titleEl = $("<p>").addClass("title")
+            var buttonEl = $("<button>").addClass("button rmvButton").text("Remove from List")
             imgEl.attr("src", response.Poster)
             titleEl.text(response.Title)
 
-            figureEl.append(imgEl)
-            cardImgEl.append(figureEl)
+            // figureEl.append(imgEl)
+            cardImgEl.append(imgEl)
             cardEl.append(cardImgEl)
 
-            mediaContentEl.append(titleEl)
-            mediaEl.append(mediaContentEl)
-            cardContentEl.append(mediaEl)
+            cardContentEl.append(titleEl)
+            // mediaEl.append(mediaContentEl)
+            // cardContentEl.append(mediaEl)
             cardEl.append(cardContentEl)
 
-            cardEl.append(buttonEl)
+            cardContentEl.append(buttonEl)
 
             $(".saved-movies").append(cardEl)
 
@@ -47,7 +45,7 @@ $(document).ready(function () {
                     return item !== movieId
                 })
                 localStorage.setItem("ID", JSON.stringify(updatedList))
-                cardEl.empty()
+                cardEl.remove()
 
             })
         });

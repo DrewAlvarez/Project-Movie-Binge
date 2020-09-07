@@ -22,6 +22,8 @@
 
     <!-- FONT OPTIONS -->
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -42,54 +44,43 @@
 
 <body>
 
+<!-- Site Main Navigation -->
+<nav class="navbar is-transparent">
+    <div class="navbar-brand">
+        <a class="logo" href="index.html">Movie Binge</a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 
-    <!-- Site Main Navigation -->
-    <nav class="navbar is-transparent">
-        <div class="navbar-brand">
+    <div class="navbar-menu">
+        <div class="navbar-start">
             <a class="navbar-item" href="index.html">
-                <p class="logo">Movie Binge</p>
+                <span class="pageLink">Home</span>
             </a>
-            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a class="navbar-item" href="watchlist.html">
+                <span class ="pageLink">View Watch List</span>
+            </a>
         </div>
 
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
-                    Home
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="button inviteBtn" href="calendar.html">
+                    <!-- Invite to Watch -->
+                    <p><span class="fa fa-calendar"></span>&ensp; Invite to Watch</p>
                 </a>
-                <a class="navbar-item" href="watchlist.html">
-                    View Watch List
-                </a>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="field is-grouped">
-                        <p class="control">
-                            <a class="button inviteBtn" href="calendar.html">
-                                <span class="icon">
-                                    <i class="fa fa-download"></i>
-                                </span>
-                                <span>Invite to Watch</span>
-                            </a>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
 
     <!-- Main Content -->
     <main>
-        <div class="button-element">
-            <button class="button refresh-btn">Refresh Movie List</button>
-            <button class="button refresh-btn">Refresh Show List</button>
-        </div>
+
+        <h2><span class="fa fa-film"></span>&ensp; Must See Movies!</h2>
 
         <!-- Random Movie Scroller -->
         <div id="movie-scroll" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
@@ -107,6 +98,7 @@
         </div>
 
 
+        <h2><span class="fa fa-tv"></span>&ensp; Show my Goodness!</h2>
         <!-- Random Television Scroller -->
         <div id="tv-scroll" class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
 
@@ -124,7 +116,7 @@
 
 
         <!-- Pop up with Movie/Show Title, Description, Actors and Rating -->
-        <div class="modal">
+        <div class="modal is-mobile">
             <div class="modal-background"></div>
             <div class="modal-card">
                 <div class="modal-card-head">
@@ -134,20 +126,20 @@
                 <section class="modal-card-body">
                     <div>
                         <p class="data-header">Plot:</p>
-                        <p class="plot"></p>
+                        <p class="plot innertext"></p>
                     </div>
                     <div>
                         <p class="data-header">Actors:</p>
-                        <p class="actors"></p>
+                        <p class="actors innertext"></p>
                     </div>
                     <div>
                         <p class="data-header">Rated:</p>
-                        <p class="rated"></p>
+                        <p class="rated innertext"></p>
                     </div>
                 </section>
                 <div class="modal-card-foot">
-                    <button class="button is-success">Add to Watch List</button>
-                    <div class="hiddenId" style="display: none;"></div>
+                    <button class="button addMov">Add to Watch List</button>
+                <div class="hiddenId" style="display: none;"></div>
                     <!-- <button class="button cancelBtn">Cancel</button> -->
                 </div>
             </div>
@@ -165,30 +157,16 @@
     <!-- Script to make Hamburger function -->
     <script>
 
-        document.addEventListener('DOMContentLoaded', () => {
+        $(document).ready(function() {
 
-            // Get all "navbar-burger" elements
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Check for click events on the navbar burger icon
+        $(".navbar-burger").click(function() {
 
-            // Check if there are any navbar burgers
-            if ($navbarBurgers.length > 0) {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
 
-                // Add a click event on each of them
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener('click', () => {
-
-                        // Get the target from the "data-target" attribute
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-
-                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-
-                    });
-                });
-            }
-
+        });
         });
 
     </script>
