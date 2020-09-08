@@ -1,7 +1,7 @@
-var watchListArr = JSON.parse(localStorage.getItem("ID"))
+var watchListArr = JSON.parse(localStorage.getItem("ID"));
 $(document).ready(function () {
     for (var i = 0; i < watchListArr.length; i++) {
-        watchListFunc(watchListArr[i])
+        watchListFunc(watchListArr[i]);
     }
 
     function watchListFunc(watchListArr) {
@@ -14,46 +14,46 @@ $(document).ready(function () {
         }).then(function (response) {
 
             var cardEl = $("<div>").addClass("card is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd");
-            var cardImgEl = $("<div>").addClass("card-image")
+            var cardImgEl = $("<div>").addClass("card-image");
             // var figureEl = $("<div>").addClass("image")
-            var imgEl = $("<img>")
-            var cardContentEl = $("<div>").addClass("card-content")
+            var imgEl = $("<img>");
+            var cardContentEl = $("<div>").addClass("card-content");
             // var mediaEl = $("<div>").addClass("media")
             // var mediaContentEl = $("<div>").addClass("media-content")
-            var titleEl = $("<p>").addClass("title")
-            var buttonEl = $("<button>").addClass("button rmvButton").text("Remove from List")
-            var reviewBtn = $("<button>").addClass("button reviewBtn").text("Read a Review!")
-            imgEl.attr("src", response.Poster)
-            titleEl.text(response.Title)
+            var titleEl = $("<p>").addClass("title");
+            var buttonEl = $("<button>").addClass("button rmvButton").text("Remove from List");
+            var reviewBtn = $("<button>").addClass("button reviewBtn").text("Read a Review!");
+            imgEl.attr("src", response.Poster);
+            titleEl.text(response.Title);
 
             // figureEl.append(imgEl)
-            cardImgEl.append(imgEl)
-            cardEl.append(cardImgEl)
+            cardImgEl.append(imgEl);
+            cardEl.append(cardImgEl);
 
-            cardContentEl.append(titleEl)
+            cardContentEl.append(titleEl);
             // mediaEl.append(mediaContentEl)
             // cardContentEl.append(mediaEl)
-            cardEl.append(cardContentEl)
+            cardEl.append(cardContentEl);
 
-            cardContentEl.append(reviewBtn)
-            cardContentEl.append(buttonEl)
+            cardContentEl.append(reviewBtn);
+            cardContentEl.append(buttonEl);
 
-            $(".saved-movies").append(cardEl)
+            $(".saved-movies").append(cardEl);
 
             buttonEl.click(function () {
-                var watchList = JSON.parse(localStorage.getItem("ID"))
-                var movieId = response.imdbID
+                var watchList = JSON.parse(localStorage.getItem("ID"));
+                var movieId = response.imdbID;
                 var updatedList = watchList.filter(function (item) {
                     return item !== movieId
                 })
-                localStorage.setItem("ID", JSON.stringify(updatedList))
-                cardEl.remove()
+                localStorage.setItem("ID", JSON.stringify(updatedList));
+                cardEl.remove();
 
             })
             //Read a review button function
             reviewBtn.click(function (){
                 var reviewId = response.imdbID;
-                $(".modal-card-title").text(response.Title);
+                $(".modal-card-title").text("Review of " + response.Title);
                 //Api to grab a review from featured reviews
                 var settings = {
                     "async": true,
@@ -67,9 +67,8 @@ $(document).ready(function () {
                 }
                 
                 $.ajax(settings).done(function (response) {
-                    //console.log(response);
-                    $(".user").text(response.featuredUserReview.review.author.displayName + "says")
-                    $(".review").text(response.featuredUserReview.review.reviewText)
+                    $(".user").text("-" + response.featuredUserReview.review.author.displayName + "says");
+                    $(".review").text(response.featuredUserReview.review.reviewText);
                 });
 
                 $(".modal").addClass("is-active");
