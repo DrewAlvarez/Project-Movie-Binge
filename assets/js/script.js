@@ -16,7 +16,6 @@ $(document).ready(function () {
             if (randomArr.indexOf(randomNum) === -1) {
                 randomArr.push(randomNum);
                 added = true;
-                console.log(randomNum)
             }
         } while (!added)
     }
@@ -24,7 +23,6 @@ $(document).ready(function () {
     // Grabs Random Movie Posters
     for (var i = 0; i < 10; i++) {
         var moviePoster = movieList[randomArr[i]]
-        console.log(moviePoster)
         posterFunc(moviePoster, i)
     }
 
@@ -43,8 +41,6 @@ $(document).ready(function () {
             method: "GET",
 
         }).then(function (response) {
-            console.log(response)
-
             imgSrc = response.Poster
             var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
             $($(".gallery-cell").get(index)).append(randomMovies);
@@ -81,7 +77,6 @@ $(document).ready(function () {
             method: "GET",
 
         }).then(function (response) {
-            console.log(response)
 
             imgSrc = response.Poster
             var randomMovies = $("<img>").attr("src", imgSrc).addClass('posterSize');
@@ -121,5 +116,47 @@ $(document).ready(function () {
         localStorage.setItem("ID", JSON.stringify(prevId))
         $(".modal").removeClass("is-active");
     })
+    // Movie refresh Button
+    $(".refresh-movie").click(function (){
+      var refreshArr = [];
+      $(".gallery-cell").text("")
+      for (var i = 0; i < 10; i++) {
+        var added = false;
+        do {
+            added = false;
+            var randomNum = Math.floor(Math.random() * 50);
+            if (refreshArr.indexOf(randomNum) === -1) {
+                refreshArr.push(randomNum);
+                added = true;
+            }
+        } while (!added)
+      }
 
+      for (var i = 0; i < 10; i++) {
+        var moviePoster = movieList[refreshArr[i]]
+        posterFunc(moviePoster, i)
+      }
+    })
+    // Show refresh button
+    $(".refresh-show").click(function (){
+      var refreshArr = [];
+      $(".tv-cell").text("")
+      for (var i = 0; i < 10; i++) {
+        var added = false;
+        do {
+            added = false;
+            var randomNum = Math.floor(Math.random() * 50);
+            if (refreshArr.indexOf(randomNum) === -1) {
+                refreshArr.push(randomNum);
+                added = true;
+            }
+        } while (!added)
+      }
+
+      for (var i = 0; i < 10; i++) {
+        var showPoster = showList[refreshArr[i]]
+        posterFuncTwo(showPoster, i)
+    }
+
+    })
 })
