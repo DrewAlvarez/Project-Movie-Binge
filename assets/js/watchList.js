@@ -67,7 +67,7 @@ $(document).ready(function () {
                 }
                 
                 $.ajax(settings).done(function (response) {
-                    $(".user").text("-" + response.featuredUserReview.review.author.displayName + "says");
+                    $(".user").text("– " + response.featuredUserReview.review.author.displayName + "says");
                     $(".review").text(response.featuredUserReview.review.reviewText);
                 });
 

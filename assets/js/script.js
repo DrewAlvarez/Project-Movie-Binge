@@ -68,7 +68,7 @@ $(document).ready(function () {
         });
     };
 
-// Popup Modal
+    // Popup Modal
     function posterFuncTwo(showPoster, index) {
         var omdbUrl = "https://www.omdbapi.com/?i=tt" + showPoster + "&apikey=c2cf349a";
 
@@ -104,7 +104,7 @@ $(document).ready(function () {
 
     }
 
-// Add to Local Storage
+    // Add to Local Storage
     $(".addMov").click(function () {
         var saved = $(this)[0].nextElementSibling.innerText
         var saveId = "ID"
@@ -117,46 +117,46 @@ $(document).ready(function () {
         $(".modal").removeClass("is-active");
     })
     // Movie refresh Button
-    $(".refresh-movie").click(function (){
-      var refreshArr = [];
-      $(".gallery-cell").text("")
-      for (var i = 0; i < 10; i++) {
-        var added = false;
-        do {
-            added = false;
-            var randomNum = Math.floor(Math.random() * 50);
-            if (refreshArr.indexOf(randomNum) === -1) {
-                refreshArr.push(randomNum);
-                added = true;
-            }
-        } while (!added)
-      }
+    $(".refresh-movie").click(function () {
+        var refreshArr = [];
+        $(".gallery-cell").text("")
+        for (var i = 0; i < 10; i++) {
+            var added = false;
+            do {
+                added = false;
+                var randomNum = Math.floor(Math.random() * 50);
+                if (refreshArr.indexOf(randomNum) === -1) {
+                    refreshArr.push(randomNum);
+                    added = true;
+                }
+            } while (!added)
+        }
 
-      for (var i = 0; i < 10; i++) {
-        var moviePoster = movieList[refreshArr[i]]
-        posterFunc(moviePoster, i)
-      }
+        for (var i = 0; i < 10; i++) {
+            var moviePoster = movieList[refreshArr[i]]
+            posterFunc(moviePoster, i)
+        }
     })
     // Show refresh button
-    $(".refresh-show").click(function (){
-      var refreshArr = [];
-      $(".tv-cell").text("")
-      for (var i = 0; i < 10; i++) {
-        var added = false;
-        do {
-            added = false;
-            var randomNum = Math.floor(Math.random() * 50);
-            if (refreshArr.indexOf(randomNum) === -1) {
-                refreshArr.push(randomNum);
-                added = true;
-            }
-        } while (!added)
-      }
+    $(".refresh-show").click(function () {
+        var refreshArr = [];
+        $(".tv-cell").text("")
+        for (var i = 0; i < 10; i++) {
+            var added = false;
+            do {
+                added = false;
+                var randomNum = Math.floor(Math.random() * 50);
+                if (refreshArr.indexOf(randomNum) === -1) {
+                    refreshArr.push(randomNum);
+                    added = true;
+                }
+            } while (!added)
+        }
 
-      for (var i = 0; i < 10; i++) {
-        var showPoster = showList[refreshArr[i]]
-        posterFuncTwo(showPoster, i)
-    }
+        for (var i = 0; i < 10; i++) {
+            var showPoster = showList[refreshArr[i]]
+            posterFuncTwo(showPoster, i)
+        }
 
     })
 })

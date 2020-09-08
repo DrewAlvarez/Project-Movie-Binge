@@ -176,14 +176,6 @@ nav{
     margin-top: 1em;
 }
 
-.innertext{
-    line-height: 1.5em;
-}
-
-.user{
-    font-style: italic;
-}
-
 .modal-card-foot{
     border:none;
     background-color:#fff;
@@ -196,6 +188,11 @@ nav{
     box-shadow: 0 3px 10px -3px rgba(0,0,0,.2);
 }
 
+.addMov:hover, .addMov:active{
+    background-color:#13b9b4;
+    color: #fff;
+    box-shadow: 0 3px 10px -3px rgba(0,0,0,.2);
+}
 
 
 
@@ -231,28 +228,46 @@ nav{
     color: #16283f;
 }
 
-.rmvButton{
-    background-color:#d7aade;
+
+/* Review Modal */
+
+.review{
+    padding-top: 2em;
+    line-height: 1.75em;
+    color: #16283f;
+}
+
+.user{
+    padding-top: 2em;
+    font-size: 14px;
     font-weight: 700;
-    color: #fff;
-    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2)
+    color: #555555;
 }
 
 .reviewBtn{
     background-color: #a546b3;
     font-weight: 700;
+    font-size: 14px;
+    margin-right: 4%;
+    color: #fff;
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2)
+}
+
+
+.rmvButton{
+    background-color:#d7aade;
+    font-weight: 700;
+    font-size: 14px;
     color: #fff;
     box-shadow: 0 5px 10px -5px rgba(0,0,0,.2)
 }
 
 
 /* Calendar Info */
-
 .calendar{
     width: 90%;
     margin: 0 auto;
 }
-
 
 
 footer{
