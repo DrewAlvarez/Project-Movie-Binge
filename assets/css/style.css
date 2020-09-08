@@ -1,16 +1,174 @@
 body{
     width: 100%;
-    max-width: 1200px;
     background-color: #FAFAFA;
     margin: 0 auto;
+    padding-bottom: 6em;
 }
-.scrolling-wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    margin: 2% 5%;
+
+main{
+    width: 100%;
 }
-    .card {
-      display: inline-block;
-      margin: 10%;
+
+section{
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1{
+    font-weight:900;
+    font-size: 3.5em;
+}
+
+nav{
+    margin-bottom: 2em;
+    padding: .5em 2.5% .5em;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
+}
+
+.navbar-item{
+    color:#390268;
+    font-weight: 700;
+}
+
+.inviteBtn{
+    background-color:#b216bf;
+    color: #fff;
+}
+
+.inviteBtn:hover{
+    background-color:#b216bf;
+    color: #fff;
+}
+
+.inviteBtn:focus{
+    background-color:#b216bf;
+    border:none;
+    color: #fff;
+}
+
+.inviteBtn:active{
+    background-color:#b216bf;
+    color: #fff;
+}
+
+#movie-scroll{
+    width: 100%;
+    margin: 2em 0;
+    height: 400px;
+
+}
+
+.gallery-cell {
+    width: 250px;
+    height: 350px;
+    padding: 0 1%;
+}
+
+.tv-cell {
+    width: 250px;
+    height: 350px;
+    padding: 0 1%;
+}
+.tv-cell {
+    width: 400px;
+    height: 500px;
+    padding: 0 2%;
+}
+
+.posterSize{
+    height: 100%;
+}
+
+/* view/hide dots */
+.flickity-page-dots {
+    display: none;
+}
+
+.card {
+    display: inline-block;
+    margin: 1em 2%;
+    border-radius: 5px;
     }
+
+.modal{
+    z-index: 10;
+}
+
+.modal-card{
+    background-color: white;
+    border-radius: 5px;
+}
+
+.modal-card-head{
+    background-color:#fff;
+    margin-bottom: 0;
+}
+
+.data-header{
+    font-weight: 700;
+    padding-top: 0em;
+}
+
+.modal-card-foot{
+    border:none;
+    background-color:#fff;
+}
+
+.saved-movies{
+    width: 95%;
+    margin: 0 auto;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1em 0;
+    background: #0f011b;
+    color: #fff;
+    text-align: center;
+}
+
+    /*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #movie-scroll{
+        margin: 1em 0;
+    }
+
+    .gallery-cell {
+        width: 300px;
+        height: 400px;
+    }
+
+    .tv-cell {
+        width: 300px;
+        height: 400px;
+    }
+    .tv-cell {
+        width: 30%;
+        height: 500px;
+    }
+} 
