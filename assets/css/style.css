@@ -17,6 +17,20 @@ section{
 h1{
     font-weight:900;
     font-size: 3.5em;
+    color:#390268;
+}
+
+h2{
+    font-weight: 700;
+    font-size:1.5em;
+    margin: 2em 0 .75em 5%;
+    color: #132133;
+}
+
+.navbar-burger, .burger, .burger:hover{
+    background-color:#fff;
+    color:#b216bf;
+
 }
 
 nav{
@@ -25,29 +39,54 @@ nav{
     box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
 }
 
-.navbar-item{
+.logo{
+    font-family: 'Righteous', cursive;
+    font-size: 3em;
+    color:#390268;
+
+}
+
+.logo:hover, .logo:active, .logo:focus{
+    color:#390268;
+}
+
+.pageLink{
     color:#390268;
     font-weight: 700;
+}
+
+.pageLink:hover{
+    color:#16e3dd;
+}
+
+.navbar-menu{
+    color:#390268;
+    margin-left: 3%;
 }
 
 .inviteBtn{
     background-color:#b216bf;
     color: #fff;
+    font-weight: 500;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
+    padding-top: .5em;
 }
 
 .inviteBtn:hover{
-    background-color:#b216bf;
-    color: #fff;
+    background-color:#16e3dd;
+    color:#fff ;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
 }
 
 .inviteBtn:focus{
-    background-color:#b216bf;
+    background-color:#16e3dd;
     border:none;
     color: #fff;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
 }
 
 .inviteBtn:active{
-    background-color:#b216bf;
+    background-color:#16e3dd;
     color: #fff;
 }
 
@@ -69,55 +108,152 @@ nav{
     height: 350px;
     padding: 0 1%;
 }
-.tv-cell {
-    width: 400px;
-    height: 500px;
-    padding: 0 2%;
-}
 
 .posterSize{
     height: 100%;
 }
+
 
 /* view/hide dots */
 .flickity-page-dots {
     display: none;
 }
 
-.card {
-    display: inline-block;
-    margin: 1em 2%;
-    border-radius: 5px;
-    }
 
+/* Button Changes */
+.flickity-button-icon{
+    color:#a546b3;
+}
+
+.flickity-button-icon:hover{
+    color:#4474b4;
+}
+
+
+
+/* Popup Modal with Movie Info */
 .modal{
     z-index: 10;
+    
 }
 
 .modal-card{
     background-color: white;
     border-radius: 5px;
+    width: 90%;
 }
 
 .modal-card-head{
     background-color:#fff;
+    width: 100%;
     margin-bottom: 0;
+    padding-left: 8%;
+    padding-right: 5%;
+    /* border-bottom: 1px solid #d7aade; */
+    box-shadow: 0 3px 15px -3px rgba(173, 173, 173, 0.5);
+}
+
+.modal-card-title{
+    width: 70%;
+    padding-right: 5%;
+    height: auto;
+    line-height: 1.25em;
+    font-weight: 700;
+}
+
+.delete{
+    background-color:#16e3dd;
+}
+
+.modal-card-body{
+    padding: 0 0 0 8%;
+    margin: 0;
+    color: #132133;
 }
 
 .data-header{
     font-weight: 700;
-    padding-top: 0em;
+    margin-top: 1em;
+}
+
+.innertext{
+    line-height: 1.5em;
+}
+
+.user{
+    font-style: italic;
 }
 
 .modal-card-foot{
     border:none;
     background-color:#fff;
+    padding: 2em 0 1.75em 8%;
 }
 
+.addMov{
+    background-color:#16e3dd;
+    color: #fff;
+    box-shadow: 0 3px 10px -3px rgba(0,0,0,.2);
+}
+
+
+
+
+/* Watch List Movies */
 .saved-movies{
-    width: 95%;
+    width: 88%;
     margin: 0 auto;
 }
+
+.card {
+    display: inline-block;
+    height: auto;
+    margin: 1em 1%;
+    padding: 1em 1%;
+    border-radius: 5px;
+    }
+
+.card-image img{
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.card-content{
+    padding:1em 0 0 0;
+}
+
+.title{
+    width: 280px;
+    height: 50px;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    color: #16283f;
+}
+
+.rmvButton{
+    background-color:#d7aade;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2)
+}
+
+.reviewBtn{
+    background-color: #a546b3;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2)
+}
+
+
+/* Calendar Info */
+
+.calendar{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
 
 footer{
     position: fixed;
@@ -132,23 +268,34 @@ footer{
 
     /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-
+    .modal-card{
+        width: 90%;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+
+    .modal-card{
+        width: 80%;
+    }
 
 }
 
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    .modal-card{
+        width: 60%;
+    }
 
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) { 
-
+    .modal-card{
+        width: 50%;
+    }
 }
 
 
@@ -167,8 +314,9 @@ footer{
         width: 300px;
         height: 400px;
     }
-    .tv-cell {
-        width: 30%;
-        height: 500px;
+
+    .modal-card{
+        width: 50%;
     }
+
 } 
