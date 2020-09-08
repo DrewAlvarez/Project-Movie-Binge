@@ -22,6 +22,7 @@ $(document).ready(function () {
             // var mediaContentEl = $("<div>").addClass("media-content")
             var titleEl = $("<p>").addClass("title")
             var buttonEl = $("<button>").addClass("button rmvButton").text("Remove from List")
+            var reviewBtn = $("<button>").addClass("button reviewBtn").text("Read a Review!")
             imgEl.attr("src", response.Poster)
             titleEl.text(response.Title)
 
@@ -34,6 +35,7 @@ $(document).ready(function () {
             // cardContentEl.append(mediaEl)
             cardEl.append(cardContentEl)
 
+            cardContentEl.append(reviewBtn)
             cardContentEl.append(buttonEl)
 
             $(".saved-movies").append(cardEl)
@@ -47,6 +49,36 @@ $(document).ready(function () {
                 localStorage.setItem("ID", JSON.stringify(updatedList))
                 cardEl.remove()
 
+            })
+            //Read a review button function
+            reviewBtn.click(function (){
+                var reviewId = response.imdbID;
+                $(".modal-card-title").text(response.Title);
+                //Api to grab a review from featured reviews
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://imdb8.p.rapidapi.com/title/get-reviews?currentCountry=US&purchaseCountry=US&tconst=" + reviewId,
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-host": "imdb8.p.rapidapi.com",
+                        "x-rapidapi-key": "498f3eedbdmsh68c5a1318922907p1d8b21jsn1625e8d08302"
+                    }
+                }
+                
+                $.ajax(settings).done(function (response) {
+                    //console.log(response);
+                    $(".user").text(response.featuredUserReview.review.author.displayName + "says")
+                    $(".review").text(response.featuredUserReview.review.reviewText)
+                });
+
+                $(".modal").addClass("is-active");
+            })
+            $(".delete").click(function () {
+                $(".modal").removeClass("is-active");
+            })
+            $(".addMov").click(function () {
+                $(".modal").removeClass("is-active");
             })
         });
     };
