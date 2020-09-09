@@ -351,15 +351,16 @@ nav{
 
 .hud-prefix {
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .hud-main-text {
     text-align: center;
+    font-size: 2em;
 }
 
 #progressBar {
-    width: 20rem;
+    width: 15rem;
     height: 3rem;
     border: 0.3rem solid #a546b3;
 }
