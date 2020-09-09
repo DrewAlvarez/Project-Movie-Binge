@@ -208,26 +208,26 @@ nav{
 
 /* Watch List Movies */
 .saved-movies{
-    width: 88%;
+    width: 90%;
     margin: 0 auto;
 }
 
 .card {
-    display: inline-block;
+    display: block;
     height: auto;
-    margin: 1em 1%;
-    padding: 1em 1%;
+    margin: 1em 10%;
+    padding: 1em 5%;
     border-radius: 5px;
     }
 
 .card-image img{
-    width: 300px;
-    height: 400px;
+    width: 370px;
+    height: 480px;
     margin: 0 auto;
 }
 
 .card-content{
-    padding:1em 0 0 0;
+    padding:1em 5% 0 5%;
 }
 
 .title{
@@ -404,6 +404,24 @@ footer{
     .modal-card{
         width: 90%;
     }
+
+    .card {
+        display: inline-block;
+        height: auto;
+        margin: 1em 1%;
+        padding: 1em 5%;
+        border-radius: 5px;
+        }
+
+        .card-image img{
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .card-content{
+            padding:1em 0 0 0;
+        }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -413,6 +431,24 @@ footer{
         width: 80%;
     }
 
+    .card {
+        display: inline-block;
+        height: auto;
+        margin: 1em 1%;
+        padding: 1em 5%;
+        border-radius: 5px;
+        }
+
+        .card-image img{
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .card-content{
+            padding:1em 0 0 0;
+        }
+
 }
 
 
@@ -421,6 +457,24 @@ footer{
     .modal-card{
         width: 60%;
     }
+
+    .card {
+        display: inline-block;
+        height: auto;
+        margin: 1em 1%;
+        padding: 1em 1%;
+        border-radius: 5px;
+        }
+
+        .card-image img{
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .card-content{
+            padding:1em 0 0 0;
+        }
 
     #game{
         width: 80%;
@@ -440,6 +494,24 @@ footer{
     .modal-card{
         width: 50%;
     }
+
+    .card {
+        display: inline-block;
+        height: auto;
+        margin: 1em 1%;
+        padding: 1em 1%;
+        border-radius: 5px;
+        }
+
+        .card-image img{
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .card-content{
+            padding:1em 0 0 0;
+        }
 
     #game{
         width: 90%;
@@ -469,6 +541,25 @@ footer{
         width: 300px;
         height: 400px;
     }
+
+    .card {
+        display: inline-block;
+        height: auto;
+        margin: 1em 1%;
+        padding: 1em 1%;
+        border-radius: 5px;
+        }
+
+        .card-image img{
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .card-content{
+            padding:1em 0 0 0;
+        }
+
 
     .modal-card{
         width: 50%;
