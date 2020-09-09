@@ -70,29 +70,40 @@ nav{
     font-weight: 500;
     box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
     padding-top: .5em;
+    border: none;
 }
 
 .inviteBtn:hover{
     background-color:#16e3dd;
     color:#fff ;
     box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
+    border: none;
 }
 
 .inviteBtn:focus{
     background-color:#16e3dd;
-    border:none;
     color: #fff;
     box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
+    border: none;
 }
 
 .inviteBtn:active{
     background-color:#16e3dd;
     color: #fff;
+    box-shadow: 0 5px 15px -3px rgba(0,0,0,.2);
+    border: none;
 }
+
+
+.refresh-movie, .refresh-show{
+    border:none;
+    background-color: #FAFAFA;
+    color:#16e3dd;
+}
+
 
 #movie-scroll{
     width: 100%;
-    margin: 2em 0;
     height: 400px;
 
 }
@@ -126,7 +137,7 @@ nav{
 }
 
 .flickity-button-icon:hover{
-    color:#4474b4;
+    color:#13b9b4;
 }
 
 
@@ -149,7 +160,6 @@ nav{
     margin-bottom: 0;
     padding-left: 8%;
     padding-right: 5%;
-    /* border-bottom: 1px solid #d7aade; */
     box-shadow: 0 3px 15px -3px rgba(173, 173, 173, 0.5);
 }
 
@@ -250,7 +260,14 @@ nav{
     font-size: 14px;
     margin-right: 4%;
     color: #fff;
-    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2)
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2);
+    border:none;
+}
+
+.reviewBtn:hover{
+    background-color: #16e3dd;
+    color: #fff;
+    border:none;
 }
 
 
@@ -259,17 +276,115 @@ nav{
     font-weight: 700;
     font-size: 14px;
     color: #fff;
-    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2)
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.2);
+    border:none;
+}
+
+.rmvButton:hover{
+    background-color:#a0e0de;
+    color: #fff;
+    border:none;
 }
 
 
-/* Calendar Info */
-.calendar{
-    width: 90%;
+
+
+/* Quiz CSS */
+.container { 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
 }
 
+#game{
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em 5%;
+}
 
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.25em;
+    border-radius: 5px;
+    border: 1px solid #a546b3;
+}
+
+.choice-container:hover {
+    border: 3px solid #b216bf;
+}
+
+.choice-prefix {
+    padding: 1.25rem 2.5rem;
+    background-color: #a546b3;
+    color: #fff;
+}
+
+.choice-text {
+    padding: 1em;
+    width: 100%;
+}
+
+.correct {
+    color: #16e3dd;
+    border: 5px solid #16e3dd;
+    transition: transform 150ms;
+}
+
+.incorrect, .incorrect:active, .incorrect:focus .incorrect:hover {
+    color: #dc3545;
+    border: 5px solid #dc3545;
+    transition: transform 150ms;
+}
+
+
+/* HUD */
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+#progressBar {
+    width: 20rem;
+    height: 3rem;
+    border: 0.3rem solid #a546b3;
+}
+
+#progressBarFull {
+    height: 2.4rem;
+    background-color: #d7aade;
+    width: 0%;
+}
+
+  /* UTILITIES */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+#question{
+    font-size: 1.5em;
+    margin: 2em 0 1em 0;
+}
+
+
+/* Page Footer */
 footer{
     position: fixed;
     left: 0;
@@ -280,6 +395,9 @@ footer{
     color: #fff;
     text-align: center;
 }
+
+
+
 
     /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -304,12 +422,34 @@ footer{
         width: 60%;
     }
 
+    #game{
+        width: 80%;
+        margin: 0 auto;
+        padding: 2em 5%;
+    }
+
+    #question{
+        font-size: 2em;
+        margin: 2em 0 1em 0;
+    }
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) { 
     .modal-card{
         width: 50%;
+    }
+
+    #game{
+        width: 90%;
+        margin: 0 auto;
+        padding: 2em 5%;
+    }
+
+    #question{
+        font-size: 2em;
+        margin: 2em 0 1em 0;
     }
 }
 
@@ -332,6 +472,17 @@ footer{
 
     .modal-card{
         width: 50%;
+    }
+
+    #game{
+        width: 70%;
+        margin: 0 auto;
+        padding: 2em 5%;
+    }
+
+    #question{
+        font-size: 2em;
+        margin: 2em 0 1em 0;
     }
 
 } 

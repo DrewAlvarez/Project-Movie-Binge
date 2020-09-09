@@ -3,7 +3,7 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
-const scoreDiv = document.getElementById("scoreContainer");
+// const scoreDiv = document.getElementById("scoreContainer");
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -90,6 +90,7 @@ choices.forEach((choice) => {
         const classToApply =
             selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
+    // Some issue happening here
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
         }
