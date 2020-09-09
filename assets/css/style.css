@@ -311,10 +311,12 @@ nav{
     font-size: 1.25em;
     border-radius: 5px;
     border: 1px solid #a546b3;
+    cursor: pointer;
 }
 
 .choice-container:hover {
     border: 3px solid #b216bf;
+    cursor: pointer;
 }
 
 .choice-prefix {

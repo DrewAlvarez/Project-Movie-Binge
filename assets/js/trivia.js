@@ -104,3 +104,7 @@ choices.forEach((choice) => {
     });
 });
 
+function incrementScore(x){
+    score = score + x;
+    scoreText.innerText = score
+}
